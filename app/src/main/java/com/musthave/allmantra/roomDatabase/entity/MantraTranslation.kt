@@ -1,4 +1,4 @@
-package com.musthave.allmantra.roomDatabase
+package com.musthave.allmantra.roomDatabase.entity
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

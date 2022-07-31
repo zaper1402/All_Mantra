@@ -1,10 +1,9 @@
-package com.musthave.allmantra.roomDatabase
+package com.musthave.allmantra.roomDatabase.entity
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.ForeignKey.Companion.CASCADE
-import androidx.room.PrimaryKey
 
 @Entity(
     foreignKeys = [ForeignKey(
