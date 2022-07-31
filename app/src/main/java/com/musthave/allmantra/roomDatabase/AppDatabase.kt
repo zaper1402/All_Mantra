@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import com.musthave.allmantra.roomDatabase.dao.MantraDao
 import com.musthave.allmantra.roomDatabase.entity.*
 
-@Database(entities = [Language::class,Mantra::class,MantraCategory::class,MantraCategoryTranslation::class,MantraTranslation::class], version = 1)
+@Database(entities = [Language::class,Mantra::class,MantraCategory::class,MantraCategoryTranslation::class,MantraTranslation::class], version = 1, exportSchema = true)
 abstract class AppDatabase : RoomDatabase(){
     abstract fun MantraDao() : MantraDao
 

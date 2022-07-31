@@ -1,18 +1,18 @@
 package com.musthave.allmantra.roomDatabase.entity
 
-import androidx.room.ColumnInfo
-import androidx.room.Entity
-import androidx.room.ForeignKey
+import androidx.room.*
 
 @Entity(
     foreignKeys = [ForeignKey(
-        Mantra::class,
-        ["id"],
-        ["mantra_id"],
+        entity = Mantra::class,
+        parentColumns = ["id"],
+        childColumns = ["mantra_id"],
         onDelete = ForeignKey.CASCADE
-    ), ForeignKey(Language::class, ["id"], ["language"], onDelete = ForeignKey.CASCADE)]
+    ), ForeignKey(entity = Language::class, parentColumns = ["id"], childColumns = ["language"], onDelete = ForeignKey.CASCADE)]
+
 )
 data class MantraTranslation(
+    @PrimaryKey(autoGenerate = true)  val _id: Int,
     @ColumnInfo(name = "title") val title: String,
     @ColumnInfo(name = "mantra") val mantra: String,
     @ColumnInfo(name = "language") val language: Int,
