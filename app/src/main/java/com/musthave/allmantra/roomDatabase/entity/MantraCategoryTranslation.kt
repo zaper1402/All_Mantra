@@ -7,6 +7,7 @@ import androidx.room.ForeignKey.CASCADE
 import androidx.room.PrimaryKey
 
 @Entity(
+    tableName = "mantra_category_translation",
     foreignKeys = [ForeignKey(
         entity = MantraCategory::class,
         parentColumns = ["id"],
@@ -15,7 +16,7 @@ import androidx.room.PrimaryKey
     ), ForeignKey(entity = Language::class, parentColumns = ["id"], childColumns = ["language"], onDelete = CASCADE)]
 )
 data class MantraCategoryTranslation(
-    @PrimaryKey(autoGenerate = true)  val _id: Int,
+    @PrimaryKey(autoGenerate = true)  val _id: Int?,
     @ColumnInfo val title: String?,
     @ColumnInfo(name = "mantra_category") val mantraCategory: Int?,
     @ColumnInfo(name = "language") val language: Int?

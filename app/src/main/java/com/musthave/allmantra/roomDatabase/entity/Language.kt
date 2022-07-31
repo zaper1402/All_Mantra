@@ -5,9 +5,11 @@ import androidx.room.Entity
 import androidx.room.Index
 import androidx.room.PrimaryKey
 
-@Entity(indices = [Index(value = ["code"], unique = true)])
+@Entity(
+    tableName = "language",
+    indices = [Index(value = ["code"], unique = true)])
 data class Language(
-    @PrimaryKey val id: Int,
+    @PrimaryKey(autoGenerate = true) val id: Int? = null,
     @ColumnInfo(name = "name") val name: String,
-    @ColumnInfo(name = "code") val code: String?
+    @ColumnInfo(name = "code") val code: String
 )

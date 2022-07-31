@@ -8,6 +8,7 @@ import androidx.room.PrimaryKey
 
 
 @Entity(
+    tableName = "mantra",
     foreignKeys = [ForeignKey(
         entity = MantraCategory::class,
         parentColumns = ["id"],
@@ -16,9 +17,9 @@ import androidx.room.PrimaryKey
     )]
 )
 data class Mantra(
-    @PrimaryKey val id: Int,
+    @PrimaryKey(autoGenerate = true) val id: Int,
     @ColumnInfo(name = "image") val image: String?,
     @ColumnInfo(name = "thumbnail") val thumbnail: String?,
     @ColumnInfo(name = "sound") val sound: String?,
-    @ColumnInfo(name = "mantra_category") val mantraCategory: Int
+    @ColumnInfo(name = "mantra_category") val mantraCategory: Int?
 )

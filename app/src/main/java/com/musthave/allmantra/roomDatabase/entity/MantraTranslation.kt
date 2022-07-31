@@ -3,6 +3,7 @@ package com.musthave.allmantra.roomDatabase.entity
 import androidx.room.*
 
 @Entity(
+    tableName = "mantra_translation",
     foreignKeys = [ForeignKey(
         entity = Mantra::class,
         parentColumns = ["id"],

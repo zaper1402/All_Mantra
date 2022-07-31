@@ -21,6 +21,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import com.musthave.allmantra.FileReaderUtils
 import com.musthave.allmantra.navigation.Screen
 import com.musthave.allmantra.ui.theme.Shapes
 
@@ -56,8 +57,11 @@ fun DeityList(homeViewModel: HomeViewModel, navController: NavController) {
 
 @Composable
 fun DeityListItem(data: String, navController: NavController) {
+    val context = LocalContext.current
     Button(
-        onClick = { navController.navigate("${Screen.MantraScreen.route}/$data") },
+        onClick = {
+            FileReaderUtils.getDBLIST(context)
+            navController.navigate("${Screen.MantraScreen.route}/$data") },
         modifier = Modifier
             .padding(10.dp, 10.dp)
             .background(colorScheme.onSurface, shape = Shapes.large),

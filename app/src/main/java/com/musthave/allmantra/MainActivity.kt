@@ -7,6 +7,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -14,10 +15,12 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.musthave.allmantra.home.HomeFragment
 import com.musthave.allmantra.navigation.Screen
+import com.musthave.allmantra.roomDatabase.AppDatabase
 import com.musthave.allmantra.ui.theme.AllMantraTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+        val db = AppDatabase.getInstance(applicationContext)
         super.onCreate(savedInstanceState)
         setContent {
             NavComposeApp()
