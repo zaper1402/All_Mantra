@@ -6,7 +6,7 @@ object Destinations {
     const val MantraScreen = "mantra_screen"
 }
 
-sealed class Screen(val route : String){
+sealed class Screen(val route: String) {
     object SplashScreen : Screen(Destinations.SplashScreen)
     object Home : Screen(Destinations.Home)
     object MantraScreen : Screen(Destinations.MantraScreen)

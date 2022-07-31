@@ -1,8 +1,7 @@
-package com.musthave.allmantra
+package com.musthave.allmantra.home
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.grid.GridCells
@@ -20,12 +19,8 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.core.os.bundleOf
 import androidx.navigation.NavController
-import androidx.navigation.Navigator
 import androidx.navigation.compose.rememberNavController
-import com.musthave.allmantra.home.DietyName
-import com.musthave.allmantra.home.HomeViewModel
 import com.musthave.allmantra.navigation.Screen
 import com.musthave.allmantra.ui.theme.Shapes
 
@@ -40,7 +35,14 @@ fun HomeFragment(navController: NavController, homeViewModel: HomeViewModel = Ho
 fun DeityList(homeViewModel: HomeViewModel, navController: NavController) {
     val context = LocalContext.current
 //    val list = remember {homeViewModel.fetchReminderList(context = context)}
-    val list = remember { listOf(DietyName.GAYATRI.name,DietyName.PARVATI.name,DietyName.SHIV.name,DietyName.VISHNU.name)}
+    val list = remember {
+        listOf(
+            DietyName.GAYATRI.name,
+            DietyName.PARVATI.name,
+            DietyName.SHIV.name,
+            DietyName.VISHNU.name
+        )
+    }
     LazyVerticalGrid(
         GridCells.Adaptive(128.dp),
         modifier = Modifier
@@ -53,14 +55,20 @@ fun DeityList(homeViewModel: HomeViewModel, navController: NavController) {
 }
 
 @Composable
-fun DeityListItem(data : String, navController: NavController ) {
+fun DeityListItem(data: String, navController: NavController) {
     Button(
-        onClick = {navController.navigate("${Screen.MantraScreen.route}/$data")},
+        onClick = { navController.navigate("${Screen.MantraScreen.route}/$data") },
         modifier = Modifier
             .padding(10.dp, 10.dp)
             .background(colorScheme.onSurface, shape = Shapes.large),
     ) {
-        Text(text = data,modifier = Modifier.fillMaxSize(), style = typography.headlineSmall, softWrap = true, textAlign = TextAlign.Center)
+        Text(
+            text = data,
+            modifier = Modifier.fillMaxSize(),
+            style = typography.headlineSmall,
+            softWrap = true,
+            textAlign = TextAlign.Center
+        )
     }
 }
 
@@ -68,7 +76,7 @@ fun DeityListItem(data : String, navController: NavController ) {
 @Composable
 fun DeityListPreview() {
     val navController = rememberNavController()
-    val list = remember { listOf("Gayatri","Ganesh","Vishnu","Shiv")}
+    val list = remember { listOf("Gayatri", "Ganesh", "Vishnu", "Shiv") }
     LazyVerticalGrid(
         GridCells.Fixed(2),
         modifier = Modifier
@@ -76,7 +84,7 @@ fun DeityListPreview() {
             .padding(0.dp, 10.dp, 0.dp, 0.dp)
     ) {
         items(list) { item ->
-            DeityListItem(item,navController)
+            DeityListItem(item, navController)
         }
     }
 }

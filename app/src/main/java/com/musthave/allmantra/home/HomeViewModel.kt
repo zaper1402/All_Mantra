@@ -10,11 +10,11 @@ class HomeViewModel : ViewModel() {
     private val mutableReminderListLiveData = MutableLiveData<ArrayList<String>>()
     val reminderListLiveData = mutableReminderListLiveData
 
-    fun fetchReminderList(context : Context) : List<String> {
+    fun MantraList(context: Context): List<String> {
         return listOf()
     }
 
-    fun getContactsList(context: Context) : MutableList<String> {
+    fun getContactsList(context: Context): MutableList<String> {
         return mutableListOf()
     }
 }

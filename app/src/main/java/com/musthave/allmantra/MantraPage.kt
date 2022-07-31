@@ -21,28 +21,31 @@ fun MantraPage(navController: NavController, deityName: String) {
 }
 
 @Composable
-private fun MantraLyricsView(text : String){
+private fun MantraLyricsView(text: String) {
     Column(Modifier.verticalScroll(rememberScrollState())) {
-        Text(text, Modifier
-            .fillMaxSize()
-                .background(MaterialTheme.colorScheme.primary), textAlign = TextAlign.Center)
+        Text(
+            text, Modifier
+                .fillMaxSize()
+                .background(MaterialTheme.colorScheme.primary), textAlign = TextAlign.Center
+        )
     }
 
 }
 
-@Preview("MantraLyricsPreview",showBackground = true)
+@Preview("MantraLyricsPreview", showBackground = true)
 @Composable
 private fun MantraLyricsPreview() {
-    val text = "Usually Lazy lists have many items, and they occupy more than the size of the scrolling container. However, when your list is populated with few items, your design can have more specific requirements for how these should be positioned in the viewport.\n" +
-            "\n" +
-            "To achieve this, you can use custom vertical Arrangement and pass it to the LazyColumn. In the following example, the TopWithFooter object only needs to implement the arrange method. Firstly, it will position items one after another. Secondly, if the total used height is lower than the viewport height, it will position the footer at the bottom:Usually Lazy lists have many items, and they occupy more than the size of the scrolling container. However, when your list is populated with few items, your design can have more specific requirements for how these should be positioned in the viewport.\n" +
-            "\n" +
-            "To achieve this, you can use custom vertical Arrangement and pass it to the LazyColumn. In the following example, the TopWithFooter object only needs to implement the arrange method. Firstly, it will position items one after another. Secondly, if the total used height is lower than the viewport height, it will position the footer at the bottom:Usually Lazy lists have many items, and they occupy more than the size of the scrolling container. However, when your list is populated with few items, your design can have more specific requirements for how these should be positioned in the viewport.\n" +
-            "\n" +
-            "To achieve this, you can use custom vertical Arrangement and pass it to the LazyColumn. In the following example, the TopWithFooter object only needs to implement the arrange method. Firstly, it will position items one after another. Secondly, if the total used height is lower than the viewport height, it will position the footer at the bottom:Usually Lazy lists have many items, and they occupy more than the size of the scrolling container. However, when your list is populated with few items, your design can have more specific requirements for how these should be positioned in the viewport.\n" +
-            "\n" +
-            "To achieve this, you can use custom vertical Arrangement and pass it to the LazyColumn. In the following example, the TopWithFooter object only needs to implement the arrange method. Firstly, it will position items one after another. Secondly, if the total used height is lower than the viewport height, it will position the footer at the bottom:Usually Lazy lists have many items, and they occupy more than the size of the scrolling container. However, when your list is populated with few items, your design can have more specific requirements for how these should be positioned in the viewport.\n" +
-            "\n" +
-            "To achieve this, you can use custom vertical Arrangement and pass it to the LazyColumn. In the following example, the TopWithFooter object only needs to implement the arrange method. Firstly, it will position items one after another. Secondly, if the total used height is lower than the viewport height, it will position the footer at the bottom:"
+    val text =
+        "Usually Lazy lists have many items, and they occupy more than the size of the scrolling container. However, when your list is populated with few items, your design can have more specific requirements for how these should be positioned in the viewport.\n" +
+                "\n" +
+                "To achieve this, you can use custom vertical Arrangement and pass it to the LazyColumn. In the following example, the TopWithFooter object only needs to implement the arrange method. Firstly, it will position items one after another. Secondly, if the total used height is lower than the viewport height, it will position the footer at the bottom:Usually Lazy lists have many items, and they occupy more than the size of the scrolling container. However, when your list is populated with few items, your design can have more specific requirements for how these should be positioned in the viewport.\n" +
+                "\n" +
+                "To achieve this, you can use custom vertical Arrangement and pass it to the LazyColumn. In the following example, the TopWithFooter object only needs to implement the arrange method. Firstly, it will position items one after another. Secondly, if the total used height is lower than the viewport height, it will position the footer at the bottom:Usually Lazy lists have many items, and they occupy more than the size of the scrolling container. However, when your list is populated with few items, your design can have more specific requirements for how these should be positioned in the viewport.\n" +
+                "\n" +
+                "To achieve this, you can use custom vertical Arrangement and pass it to the LazyColumn. In the following example, the TopWithFooter object only needs to implement the arrange method. Firstly, it will position items one after another. Secondly, if the total used height is lower than the viewport height, it will position the footer at the bottom:Usually Lazy lists have many items, and they occupy more than the size of the scrolling container. However, when your list is populated with few items, your design can have more specific requirements for how these should be positioned in the viewport.\n" +
+                "\n" +
+                "To achieve this, you can use custom vertical Arrangement and pass it to the LazyColumn. In the following example, the TopWithFooter object only needs to implement the arrange method. Firstly, it will position items one after another. Secondly, if the total used height is lower than the viewport height, it will position the footer at the bottom:Usually Lazy lists have many items, and they occupy more than the size of the scrolling container. However, when your list is populated with few items, your design can have more specific requirements for how these should be positioned in the viewport.\n" +
+                "\n" +
+                "To achieve this, you can use custom vertical Arrangement and pass it to the LazyColumn. In the following example, the TopWithFooter object only needs to implement the arrange method. Firstly, it will position items one after another. Secondly, if the total used height is lower than the viewport height, it will position the footer at the bottom:"
     MantraLyricsView(text)
 }
